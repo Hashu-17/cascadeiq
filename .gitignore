@@ -52,7 +52,7 @@ logs/
 # Backdating and history
 history/
 evolution.sh
-
-history/
-evolution.sh
 tools/
+
+# Local progress notes (do not track)
+PROGRESS.md
