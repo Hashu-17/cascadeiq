@@ -1,0 +1,8 @@
+Initial CascadeIQ project structure: FastAPI backend, React frontend, Docker Compose setup
+
+- Basic project skeleton with backend and frontend directories
+- FastAPI application with CORS middleware
+- React 18 application with basic health check
+- Docker Compose configuration with PostgreSQL, Redis
+- Docker containers for backend and frontend services
+- Documentation and setup guides
