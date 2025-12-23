@@ -1,1 +1,1 @@
-FastAPI application with CORS middleware and Docker setup
+Add clarifying comments to FastAPI app and update docker-compose header

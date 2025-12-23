@@ -1,5 +1,6 @@
 version: '3.8'
 
+# Docker Compose configuration for CascadeIQ services
 services:
   postgres:
     image: postgres:15

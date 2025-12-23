@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+# FastAPI application for CascadeIQ
 app = FastAPI(title="CascadeIQ", version="0.1.0")
 
 # CORS middleware
