@@ -1,1 +1,1 @@
-Add SQLAlchemy models for incidents and workflows
+Add database session helpers

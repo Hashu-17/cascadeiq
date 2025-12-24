@@ -26,3 +26,9 @@ class Workflow(Base):
     incident_id = Column(String, index=True)
     status = Column(String, default="INITIALIZED")
     created_at = Column(DateTime, default=datetime.utcnow)
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
