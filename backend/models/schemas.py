@@ -1,6 +1,5 @@
-from pydantic import BaseModel
 from datetime import datetime
-from typing import Optional
+from pydantic import BaseModel
 
 class IncidentCreate(BaseModel):
     service_name: str
@@ -14,13 +13,10 @@ class IncidentResponse(BaseModel):
     severity: str
     status: str
     description: str
-    timestamp: datetime
-    
+    created_at: datetime
+
     class Config:
         from_attributes = True
-
-class WorkflowCreate(BaseModel):
-    incident_id: str
 
 class WorkflowResponse(BaseModel):
     id: int
@@ -28,6 +24,6 @@ class WorkflowResponse(BaseModel):
     incident_id: str
     status: str
     created_at: datetime
-    
+
     class Config:
         from_attributes = True
