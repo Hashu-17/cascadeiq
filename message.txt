@@ -1,1 +1,1 @@
-Add incident ingestion endpoint
+Add incident list and detail endpoints
