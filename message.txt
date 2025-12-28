@@ -1,1 +1,1 @@
-Add incident controller error handling
+Fix incident ID validation

@@ -34,3 +34,6 @@ def get_incident(incident_id: str, db: Session = Depends(get_db)):
 @router.get("/incidents/active", response_model=list[IncidentResponse])
 def list_active_incidents(db: Session = Depends(get_db)):
     return db.query(Incident).filter(Incident.status == "ACTIVE").all()
+@router.get("/incidents/by-service/{service_name}", response_model=list[IncidentResponse])
+def list_by_service(service_name: str, db: Session = Depends(get_db)):
+    return db.query(Incident).filter(Incident.service_name == service_name).all()
