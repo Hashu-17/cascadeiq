@@ -31,3 +31,6 @@ def get_incident(incident_id: str, db: Session = Depends(get_db)):
     if not incident:
         raise HTTPException(status_code=404, detail="Incident not found")
     return incident
+@router.get("/incidents/active", response_model=list[IncidentResponse])
+def list_active_incidents(db: Session = Depends(get_db)):
+    return db.query(Incident).filter(Incident.status == "ACTIVE").all()

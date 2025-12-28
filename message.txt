@@ -1,1 +1,1 @@
-Add incident list and detail endpoints
+Add incident controller error handling
