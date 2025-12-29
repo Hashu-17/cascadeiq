@@ -1,0 +1,23 @@
+.incident-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.incident-table th, .incident-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #2f3b4f;
+  text-align: left;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.severity-high { background: #ff4d4d; color: #fff; }
+.severity-medium { background: #ffb020; color: #1a1a1a; }
+.severity-low { background: #3fb950; color: #1a1a1a; }
+.status-active { background: #1f6feb; color: #fff; }
+.status-resolved { background: #6e7681; color: #fff; }

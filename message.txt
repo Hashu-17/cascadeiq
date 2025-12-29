@@ -1,1 +1,1 @@
-Fix incident ID validation
+Add IncidentTable component scaffold
