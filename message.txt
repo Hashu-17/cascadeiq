@@ -1,1 +1,1 @@
-Add IncidentTable component scaffold
+Add severity and status badge styles

@@ -20,8 +20,8 @@ function IncidentTable() {
         {rows.map(row => (
           <tr key={row.id}>
             <td>{row.service}</td>
-            <td>{row.severity}</td>
-            <td>{row.status}</td>
+            <td><span className={`badge severity-${row.severity.toLowerCase()}`}>{row.severity}</span></td>
+            <td><span className={`badge status-${row.status.toLowerCase()}`}>{row.status}</span></td>
           </tr>
         ))}
       </tbody>
