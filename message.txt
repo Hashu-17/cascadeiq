@@ -1,1 +1,1 @@
-Add severity and status badge styles
+Add loading and error states
