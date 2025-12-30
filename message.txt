@@ -1,1 +1,1 @@
-Add loading and error states
+Tweak responsive layout spacing
