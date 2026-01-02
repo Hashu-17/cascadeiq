@@ -1,1 +1,1 @@
-Tweak responsive layout spacing
+Fetch incidents from API in App
