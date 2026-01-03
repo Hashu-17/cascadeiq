@@ -24,3 +24,5 @@
 @media (max-width: 768px) {
   .App-header { padding: 16px; }
 }
+
+.App-header h1 { letter-spacing: 0.5px; }
