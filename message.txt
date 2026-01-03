@@ -1,1 +1,1 @@
-Add frontend API client helper
+Fix CORS settings for frontend
