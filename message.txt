@@ -1,1 +1,1 @@
-Polish dashboard typography and spacing
+Update frontend Docker build
