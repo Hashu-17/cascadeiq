@@ -1,1 +1,1 @@
-Add payment service stub
+Add auth service stub
