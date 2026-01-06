@@ -1,1 +1,1 @@
-Add auth service stub
+Add infrastructure docker layout
