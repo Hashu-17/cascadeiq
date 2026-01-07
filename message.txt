@@ -1,1 +1,1 @@
-Add payment service failure simulation
+Add auth service failure simulation
