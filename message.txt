@@ -1,1 +1,1 @@
-Add Redis client utilities
+Add queue helper wrapper
