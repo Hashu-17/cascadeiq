@@ -1,1 +1,1 @@
-Add auth service failure simulation
+Add Redis client utilities
