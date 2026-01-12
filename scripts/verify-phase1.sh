@@ -1,12 +1,12 @@
 #!/bin/bash
-
-echo "CascadeIQ Phase 1 Verification Script"
-echo "======================================"
+set -e
 
 API_URL="http://localhost:8000"
-FRONTEND_URL="http://localhost:3000"
 
 echo "Checking API health..."
-curl -s $API_URL/health || echo "API not responding"
+curl -s $API_URL/health | grep healthy
 
-echo -e "\nVerification complete."
+echo "Checking incidents list..."
+curl -s $API_URL/api/incidents > /dev/null
+
+echo "OK"
