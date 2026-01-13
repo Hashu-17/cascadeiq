@@ -62,3 +62,7 @@ Run the verification scripts:
 - **Port already in use**: Change ports in docker-compose.yml
 - **Database connection errors**: Ensure PostgreSQL is running and healthy
 - **Redis connection errors**: Ensure Redis is running and healthy
+
+## Phase 1 Validation
+
+Run the verification scripts to confirm setup.
