@@ -1,1 +1,1 @@
-Expand setup documentation
+Add basic migration placeholders
