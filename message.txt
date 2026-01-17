@@ -1,1 +1,1 @@
-Add basic migration placeholders
+Add frontend .dockerignore
