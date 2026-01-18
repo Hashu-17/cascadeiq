@@ -1,1 +1,1 @@
-Add workflow state validation
+Add workflow transitions map

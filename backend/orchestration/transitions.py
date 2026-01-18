@@ -1,0 +1,7 @@
+VALID_TRANSITIONS = {
+    'INITIALIZED': ['TRIAGED', 'FAILED'],
+    'TRIAGED': ['IN_PROGRESS', 'FAILED'],
+    'IN_PROGRESS': ['RESOLVED', 'FAILED'],
+    'RESOLVED': [],
+    'FAILED': [],
+}
