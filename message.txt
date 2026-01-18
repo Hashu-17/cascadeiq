@@ -1,1 +1,1 @@
-Add workflow state model
+Add workflow state validation
