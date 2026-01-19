@@ -1,1 +1,1 @@
-Add workflow transitions map
+Add workflow state manager
