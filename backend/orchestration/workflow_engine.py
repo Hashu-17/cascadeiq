@@ -12,3 +12,5 @@ def initialize_workflow(incident_id: str) -> WorkflowState:
     )
     save_state(state)
     return state
+
+# Initialization hooks
