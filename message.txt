@@ -1,1 +1,1 @@
-Add workflow status update endpoint
+Add workflow trace logging

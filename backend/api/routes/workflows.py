@@ -16,3 +16,5 @@ def update_workflow_status(workflow_id: str, status: str, db: Session = Depends(
         db.commit()
         db.refresh(workflow)
     return workflow
+
+# Trace logging placeholder
