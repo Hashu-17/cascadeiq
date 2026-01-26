@@ -1,1 +1,1 @@
-Add workflows API routes
+Add workflow status update endpoint
