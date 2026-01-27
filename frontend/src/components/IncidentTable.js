@@ -1,12 +1,7 @@
 import React from 'react';
 import './IncidentTable.css';
 
-const rows = [
-  { id: 1, service: 'payment-service', severity: 'HIGH', status: 'ACTIVE' },
-  { id: 2, service: 'auth-service', severity: 'LOW', status: 'RESOLVED' },
-];
-
-function IncidentTable() {
+function IncidentTable({ incidents }) {
   return (
     <table className="incident-table">
       <thead>
@@ -14,14 +9,16 @@ function IncidentTable() {
           <th>Service</th>
           <th>Severity</th>
           <th>Status</th>
+          <th>Workflow</th>
         </tr>
       </thead>
       <tbody>
-        {rows.map(row => (
-          <tr key={row.id}>
-            <td>{row.service}</td>
+        {incidents.map(row => (
+          <tr key={row.incident_id}>
+            <td>{row.service_name}</td>
             <td><span className={`badge severity-${row.severity.toLowerCase()}`}>{row.severity}</span></td>
             <td><span className={`badge status-${row.status.toLowerCase()}`}>{row.status}</span></td>
+            <td>{row.workflow_status || 'INITIALIZED'}</td>
           </tr>
         ))}
       </tbody>

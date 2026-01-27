@@ -1,1 +1,1 @@
-Add workflow trace logging
+Show workflow status in IncidentTable
