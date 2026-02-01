@@ -1,1 +1,1 @@
-Add workflow fields to API responses
+Add analysis fields to workflow state
