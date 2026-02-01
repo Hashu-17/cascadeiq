@@ -1,1 +1,1 @@
-Persist workflows via DB manager
+Add workflow analysis persistence

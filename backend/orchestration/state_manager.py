@@ -24,3 +24,13 @@ class WorkflowStateManager:
         workflow.updated_at = datetime.utcnow()
         self.db.add(workflow)
         return workflow
+
+    def apply_analysis(self, workflow: Workflow, analysis: dict) -> Workflow:
+        workflow.probable_cause = analysis.get("probable_cause")
+        workflow.confidence = analysis.get("confidence")
+        workflow.analysis_severity = analysis.get("analysis_severity")
+        workflow.analysis_summary = analysis.get("analysis_summary")
+        workflow.updated_at = analysis.get("analyzed_at", datetime.utcnow())
+        workflow.status = "ANALYSIS_COMPLETE"
+        self.db.add(workflow)
+        return workflow
