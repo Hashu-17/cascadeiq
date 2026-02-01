@@ -1,1 +1,1 @@
-Add workflow analysis fields to schema
+Expand incident request schema
