@@ -1,9 +1,9 @@
 from datetime import datetime
 import os
-from sqlalchemy import Column, DateTime, Integer, JSON, String, Text, create_engine
+from sqlalchemy import Column, DateTime, Float, Integer, JSON, String, Text, create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://cascadeiq:cascadeiq@localhost:5432/cascadeiq")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://cascadeiq:cascadeiq_dev@localhost:5432/cascadeiq")
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -29,4 +29,16 @@ class Workflow(Base):
     workflow_id = Column(String, unique=True, index=True)
     incident_id = Column(String, index=True)
     status = Column(String, default="INITIALIZED")
+    probable_cause = Column(String)
+    confidence = Column(Float)
+    analysis_severity = Column(String)
+    analysis_summary = Column(Text)
+    updated_at = Column(DateTime, default=datetime.utcnow)
     created_at = Column(DateTime, default=datetime.utcnow)
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
