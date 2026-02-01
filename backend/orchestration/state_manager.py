@@ -1,16 +1,26 @@
 from datetime import datetime
-from backend.orchestration.state import WorkflowState
+import uuid
+from sqlalchemy.orm import Session
+from database import Workflow
 
-_STATE = {}
+class WorkflowStateManager:
+    def __init__(self, db: Session) -> None:
+        self.db = db
 
-def save_state(state: WorkflowState) -> None:
-    _STATE[state.workflow_id] = state
+    def create_workflow(self, incident_id: str) -> Workflow:
+        workflow = Workflow(
+            workflow_id=str(uuid.uuid4()),
+            incident_id=incident_id,
+            status="INITIALIZED",
+            created_at=datetime.utcnow(),
+            updated_at=datetime.utcnow(),
+        )
+        self.db.add(workflow)
+        self.db.flush()
+        return workflow
 
-def load_state(workflow_id: str) -> WorkflowState | None:
-    return _STATE.get(workflow_id)
-
-def touch_state(state: WorkflowState, status: str) -> WorkflowState:
-    state.status = status
-    state.updated_at = datetime.utcnow()
-    save_state(state)
-    return state
+    def update_status(self, workflow: Workflow, new_status: str) -> Workflow:
+        workflow.status = new_status
+        workflow.updated_at = datetime.utcnow()
+        self.db.add(workflow)
+        return workflow
