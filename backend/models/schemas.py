@@ -22,6 +22,12 @@ class IncidentResponse(BaseModel):
     raw_logs: Optional[str] = None
     incident_timestamp: Optional[datetime] = None
     incident_metadata: Optional[dict] = None
+    workflow_id: Optional[str] = None
+    workflow_status: Optional[str] = None
+    probable_cause: Optional[str] = None
+    confidence: Optional[float] = None
+    analysis_severity: Optional[str] = None
+    analysis_summary: Optional[str] = None
     created_at: datetime
 
     class Config:
@@ -32,6 +38,11 @@ class WorkflowResponse(BaseModel):
     workflow_id: str
     incident_id: str
     status: str
+    probable_cause: Optional[str] = None
+    confidence: Optional[float] = None
+    analysis_severity: Optional[str] = None
+    analysis_summary: Optional[str] = None
+    updated_at: Optional[datetime] = None
     created_at: datetime
 
     class Config:

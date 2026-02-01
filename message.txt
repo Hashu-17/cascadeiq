@@ -1,1 +1,1 @@
-Expand incident request schema
+Add workflow fields to API responses
