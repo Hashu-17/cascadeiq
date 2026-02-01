@@ -1,1 +1,1 @@
-Add workflow analysis persistence
+Add heuristic workflow analysis
