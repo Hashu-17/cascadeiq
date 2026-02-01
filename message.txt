@@ -1,1 +1,1 @@
-Show workflow status in IncidentTable
+Extend incident schema fields
