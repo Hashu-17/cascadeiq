@@ -1,1 +1,1 @@
-Apply workflow analysis on ingest
+Retire legacy queue module
