@@ -1,1 +1,1 @@
-Enqueue incidents for processing
+Apply workflow analysis on ingest
