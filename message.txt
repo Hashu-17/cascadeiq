@@ -1,1 +1,1 @@
-Retire legacy queue module
+Update incident list workflow mapping
