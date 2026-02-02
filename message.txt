@@ -1,1 +1,1 @@
-Add incident queue module
+Enqueue incidents for processing

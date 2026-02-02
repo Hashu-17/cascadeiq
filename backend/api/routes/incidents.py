@@ -55,3 +55,33 @@ def get_incident(incident_id: str, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Incident not found")
     workflow = db.query(Workflow).filter(Workflow.incident_id == incident_id).first()
     return _build_incident_response(incident, workflow)
+from incident_queue import enqueue_incident
+
+@router.post("/incident", response_model=IncidentResponse)
+def create_incident(payload: IncidentCreate, db: Session = Depends(get_db)):
+    incident_timestamp = payload.timestamp or datetime.utcnow()
+    incident = Incident(
+        incident_id=str(uuid.uuid4()),
+        service_name=payload.service_name,
+        severity=payload.severity,
+        incident_type=payload.incident_type,
+        description=payload.description,
+        raw_logs=payload.raw_logs,
+        incident_timestamp=incident_timestamp,
+        incident_metadata=payload.incident_metadata,
+        status="ACTIVE",
+    )
+    db.add(incident)
+    db.commit()
+    db.refresh(incident)
+
+    enqueue_incident(
+        json.dumps({
+            "incident_id": incident.incident_id,
+            "service_name": incident.service_name,
+            "incident_type": incident.incident_type,
+            "timestamp": incident_timestamp.isoformat(),
+        })
+    )
+
+    return _build_incident_response(incident, None)
