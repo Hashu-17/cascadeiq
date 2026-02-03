@@ -1,1 +1,1 @@
-Add simulations package scaffolding
+Add simulation scenario templates
