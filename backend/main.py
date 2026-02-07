@@ -1,8 +1,17 @@
+import os
+import sys
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.api.routes.incidents import router as incidents_router
-from backend.api.routes.workflows import router as workflows_router
-from backend.database import Base, engine
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_ROOT not in sys.path:
+    # Allow backend code to import root-level packages like simulations
+    sys.path.append(PROJECT_ROOT)
+
+from api.routes.incidents import router as incidents_router
+from api.routes.workflows import router as workflows_router
+from database import Base, engine
 
 Base.metadata.create_all(bind=engine)
 
