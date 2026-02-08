@@ -11,6 +11,7 @@ if PROJECT_ROOT not in sys.path:
 
 from api.routes.incidents import router as incidents_router
 from api.routes.workflows import router as workflows_router
+from api.routes.simulations import router as simulations_router
 from database import Base, engine
 
 Base.metadata.create_all(bind=engine)
@@ -31,3 +32,4 @@ def health_check():
 
 app.include_router(incidents_router)
 app.include_router(workflows_router)
+app.include_router(simulations_router)
