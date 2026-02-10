@@ -1,1 +1,1 @@
-Register simulations routes
+Include history generator tool
