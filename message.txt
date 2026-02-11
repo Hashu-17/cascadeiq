@@ -1,1 +1,1 @@
-feat: validate agent results
+feat: register analysis agents
