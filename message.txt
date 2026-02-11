@@ -1,1 +1,1 @@
-feat: extract signals from incident logs
+feat: add log heuristic analysis

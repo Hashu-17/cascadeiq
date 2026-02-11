@@ -31,3 +31,5 @@ class LogAgent:
             recommendation="Inspect the affected dependency and recent errors.",
             analyzed_at=datetime.utcnow(),
         )
+
+# Log signal extraction remains deterministic for local development.
