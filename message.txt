@@ -1,1 +1,1 @@
-Include history generator tool
+fix: repair simulation log formatting
