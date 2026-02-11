@@ -1,1 +1,1 @@
-feat: define agent input contracts
+feat: extract signals from incident logs
