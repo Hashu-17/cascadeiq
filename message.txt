@@ -1,1 +1,1 @@
-feat: add log heuristic analysis
+feat: validate agent results
