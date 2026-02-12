@@ -1,1 +1,1 @@
-feat: record agent completion state
+feat: define deployment evidence contract
