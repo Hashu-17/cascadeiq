@@ -12,3 +12,5 @@ class WorkflowState:
     analysis_severity: Optional[str] = None
     analysis_summary: Optional[str] = None
     updated_at: datetime
+
+    completed_agents: list[str] = None

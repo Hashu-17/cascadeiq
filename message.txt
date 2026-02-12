@@ -1,1 +1,1 @@
-feat: connect log analysis to workflows
+feat: record agent completion state
