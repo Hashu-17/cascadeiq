@@ -43,3 +43,8 @@ def analyze_incident(raw_logs: str, incident_type: str, service_name: str, sever
         "analysis_summary": analysis_summary,
         "analyzed_at": datetime.utcnow(),
     }
+
+from agents.log_agent import LogAgent
+
+def run_log_agent(payload):
+    return LogAgent().analyze(payload)

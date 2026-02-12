@@ -1,1 +1,1 @@
-test: cover agent execution
+feat: connect log analysis to workflows
