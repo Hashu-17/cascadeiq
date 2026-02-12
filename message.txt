@@ -1,1 +1,1 @@
-feat: add deployment analysis agent
+feat: register deployment analysis
