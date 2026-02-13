@@ -1,1 +1,1 @@
-feat: collect multi-agent results
+fix: handle agent execution failures

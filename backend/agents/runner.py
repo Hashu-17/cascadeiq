@@ -6,3 +6,6 @@ def run_agent(name: str, payload: AgentInput) -> AgentHypothesis:
     agent = get_agent(name)
     result = agent.analyze(payload)
     return validate_hypothesis(result)
+
+class AgentExecutionError(RuntimeError):
+    pass
