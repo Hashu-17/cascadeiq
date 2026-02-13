@@ -1,1 +1,1 @@
-fix: handle agent execution failures
+feat: expose analysis in incident responses

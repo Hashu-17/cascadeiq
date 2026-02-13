@@ -47,3 +47,10 @@ class WorkflowResponse(BaseModel):
 
     class Config:
         from_attributes = True
+
+
+class AgentHypothesisResponse(BaseModel):
+    agent_name: str
+    probable_cause: str
+    confidence: float
+    evidence: list[str] = []
