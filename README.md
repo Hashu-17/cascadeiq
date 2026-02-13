@@ -26,3 +26,7 @@ Then navigate to:
 ## Development
 
 See [SETUP.md](SETUP.md) for detailed setup and development instructions.
+
+## Phase 3 Agents
+
+Log and deployment agents produce validated hypotheses for workflow analysis.

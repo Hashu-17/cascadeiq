@@ -1,1 +1,1 @@
-feat: expose analysis in incident responses
+docs: explain agent analysis usage
