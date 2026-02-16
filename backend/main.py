@@ -33,3 +33,6 @@ def health_check():
 app.include_router(incidents_router)
 app.include_router(workflows_router)
 app.include_router(simulations_router)
+
+from api.routes.traces import router as traces_router
+app.include_router(traces_router)
