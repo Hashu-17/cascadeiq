@@ -109,3 +109,5 @@ def list_by_service(service_name: str, db: Session = Depends(get_db)):
         _build_incident_response(incident, workflow_map.get(incident.incident_id))
         for incident in incidents
     ]
+
+# Ingestion trace recording hook

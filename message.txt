@@ -1,1 +1,1 @@
-feat: add trace store operations
+feat: record incident ingestion traces
