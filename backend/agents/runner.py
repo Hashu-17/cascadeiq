@@ -9,3 +9,5 @@ def run_agent(name: str, payload: AgentInput) -> AgentHypothesis:
 
 class AgentExecutionError(RuntimeError):
     pass
+
+# Agent execution trace hook
