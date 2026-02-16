@@ -1,1 +1,1 @@
-docs: explain agent analysis usage
+feat: define workflow trace records
