@@ -1,1 +1,1 @@
-feat: persist workflow traces
+feat: add trace store operations
