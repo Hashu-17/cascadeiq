@@ -1,1 +1,1 @@
-feat: show trace status in incidents
+test: cover trace store queries
