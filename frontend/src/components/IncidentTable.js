@@ -27,3 +27,5 @@ function IncidentTable({ incidents }) {
 }
 
 export default IncidentTable;
+
+// Workflow trace status is available from the observability API.
