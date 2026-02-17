@@ -1,1 +1,1 @@
-feat: expose trace query endpoint
+feat: add workflow trace timeline
