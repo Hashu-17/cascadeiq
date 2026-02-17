@@ -1,1 +1,1 @@
-feat: add workflow trace timeline
+feat: add trace API client
