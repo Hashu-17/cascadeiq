@@ -39,3 +39,6 @@ app.include_router(traces_router)
 
 from api.routes.metrics import router as metrics_router
 app.include_router(metrics_router)
+
+from observability.middleware import collect_request_metrics
+app.middleware('http')(collect_request_metrics)

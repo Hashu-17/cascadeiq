@@ -1,1 +1,1 @@
-feat: expose metrics endpoint
+feat: measure request timing
