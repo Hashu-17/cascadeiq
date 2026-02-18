@@ -1,1 +1,1 @@
-feat: add application metrics
+feat: expose metrics endpoint

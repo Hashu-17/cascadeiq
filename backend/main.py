@@ -36,3 +36,6 @@ app.include_router(simulations_router)
 
 from api.routes.traces import router as traces_router
 app.include_router(traces_router)
+
+from api.routes.metrics import router as metrics_router
+app.include_router(metrics_router)
