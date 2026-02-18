@@ -1,1 +1,1 @@
-chore: configure Prometheus scraping
+chore: provision Grafana datasource
