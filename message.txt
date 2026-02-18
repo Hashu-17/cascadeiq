@@ -1,1 +1,1 @@
-feat: measure request timing
+chore: configure Prometheus scraping
