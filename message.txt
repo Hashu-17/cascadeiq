@@ -1,1 +1,1 @@
-test: cover trace store queries
+feat: add application metrics
