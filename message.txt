@@ -1,1 +1,1 @@
-feat: add incident dashboard
+chore: run Prometheus and Grafana
