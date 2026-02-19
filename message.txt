@@ -1,1 +1,1 @@
-test: add observability verification
+docs: explain observability setup

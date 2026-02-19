@@ -64,3 +64,7 @@ Run the verification scripts:
 - **Redis connection errors**: Ensure Redis is running and healthy
 
 
+
+## Observability
+
+Prometheus scrapes backend metrics and Grafana provides the operations dashboard.
