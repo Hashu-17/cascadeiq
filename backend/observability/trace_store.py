@@ -27,3 +27,5 @@ class TraceStore:
                 .filter(ExecutionTraceModel.workflow_id == workflow_id)
                 .order_by(ExecutionTraceModel.timestamp)
                 .all())
+
+# Trace writes are flushed before the workflow transaction commits.
