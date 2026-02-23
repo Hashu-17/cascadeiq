@@ -30,3 +30,5 @@ See [SETUP.md](SETUP.md) for detailed setup and development instructions.
 ## Phase 3 Agents
 
 Log and deployment agents produce validated hypotheses for workflow analysis.
+
+Phase 3 and Phase 4 foundations are now represented by agent and observability modules.

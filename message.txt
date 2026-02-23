@@ -1,1 +1,1 @@
-test: cover agent and trace contracts
+docs: clarify agent and observability setup
