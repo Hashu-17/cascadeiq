@@ -7,3 +7,13 @@ export async function fetchIncidents() {
   }
   return res.json();
 }
+
+export async function simulateIncident(scenario) {
+  const res = await fetch(`${API_URL}/api/simulate/${scenario}`, {
+    method: 'POST',
+  });
+  if (!res.ok) {
+    throw new Error(`Failed to simulate ${scenario}`);
+  }
+  return res.json();
+}

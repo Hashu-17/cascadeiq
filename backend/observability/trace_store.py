@@ -1,6 +1,6 @@
 from datetime import datetime
 from sqlalchemy.orm import Session
-from database import ExecutionTraceModel
+from observability.models import ExecutionTraceModel
 
 class TraceStore:
     def __init__(self, db: Session) -> None:

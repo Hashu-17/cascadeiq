@@ -6,7 +6,7 @@ services:
     image: postgres:15
     environment:
       POSTGRES_USER: cascadeiq
-      POSTGRES_PASSWORD: cascadeiq
+      POSTGRES_PASSWORD: cascadeiq_dev
       POSTGRES_DB: cascadeiq
     ports:
       - "5432:5432"
@@ -19,11 +19,13 @@ services:
     volumes:
       - redis_data:/data
   backend:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: postgresql://cascadeiq:cascadeiq@postgres:5432/cascadeiq
+      DATABASE_URL: postgresql://cascadeiq:cascadeiq_dev@postgres:5432/cascadeiq
       REDIS_URL: redis://redis:6379
   frontend:
     build: ./frontend
@@ -40,17 +42,18 @@ services:
     ports:
       - "9002:9002"
 
-volumes:
-  postgres_data:
-  redis_data:
-
   prometheus:
     image: prom/prometheus:latest
     ports:
       - "9090:9090"
     volumes:
       - ./infrastructure/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+
   grafana:
     image: grafana/grafana:latest
     ports:
       - "3001:3000"
+
+volumes:
+  postgres_data:
+  redis_data:
