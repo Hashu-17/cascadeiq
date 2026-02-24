@@ -1,17 +1,32 @@
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
+
+
+class AgentHypothesisResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    agent_name: str
+    probable_cause: str
+    confidence: float
+    evidence: list[str] = Field(default_factory=list)
+    recommendation: Optional[str] = None
+    analyzed_at: Optional[datetime] = None
+
 
 class IncidentCreate(BaseModel):
     service_name: str
     severity: str = "MEDIUM"
     incident_type: str
-    raw_logs: str
+    raw_logs: str = ""
     timestamp: Optional[datetime] = None
     incident_metadata: dict = Field(default_factory=dict)
     description: Optional[str] = None
 
+
 class IncidentResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     incident_id: str
     service_name: str
@@ -28,12 +43,13 @@ class IncidentResponse(BaseModel):
     confidence: Optional[float] = None
     analysis_severity: Optional[str] = None
     analysis_summary: Optional[str] = None
+    hypotheses: list[AgentHypothesisResponse] = Field(default_factory=list)
     created_at: datetime
 
-    class Config:
-        from_attributes = True
 
 class WorkflowResponse(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     workflow_id: str
     incident_id: str
@@ -42,15 +58,6 @@ class WorkflowResponse(BaseModel):
     confidence: Optional[float] = None
     analysis_severity: Optional[str] = None
     analysis_summary: Optional[str] = None
+    hypotheses: list[AgentHypothesisResponse] = Field(default_factory=list)
     updated_at: Optional[datetime] = None
     created_at: datetime
-
-    class Config:
-        from_attributes = True
-
-
-class AgentHypothesisResponse(BaseModel):
-    agent_name: str
-    probable_cause: str
-    confidence: float
-    evidence: list[str] = []
