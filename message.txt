@@ -1,1 +1,1 @@
-feat: integrate multi-agent runner into workflow engine
+feat: record end-to-end execution traces across workflow stages
