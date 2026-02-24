@@ -1,7 +1,12 @@
-from datetime import datetime
+from datetime import datetime, timezone
 import uuid
 from sqlalchemy.orm import Session
 from database import Workflow
+
+
+def _utc_now():
+    return datetime.now(timezone.utc)
+
 
 class WorkflowStateManager:
     def __init__(self, db: Session) -> None:
@@ -12,8 +17,8 @@ class WorkflowStateManager:
             workflow_id=str(uuid.uuid4()),
             incident_id=incident_id,
             status="INITIALIZED",
-            created_at=datetime.utcnow(),
-            updated_at=datetime.utcnow(),
+            created_at=_utc_now(),
+            updated_at=_utc_now(),
         )
         self.db.add(workflow)
         self.db.flush()
@@ -21,7 +26,7 @@ class WorkflowStateManager:
 
     def update_status(self, workflow: Workflow, new_status: str) -> Workflow:
         workflow.status = new_status
-        workflow.updated_at = datetime.utcnow()
+        workflow.updated_at = _utc_now()
         self.db.add(workflow)
         return workflow
 
@@ -30,7 +35,8 @@ class WorkflowStateManager:
         workflow.confidence = analysis.get("confidence")
         workflow.analysis_severity = analysis.get("analysis_severity")
         workflow.analysis_summary = analysis.get("analysis_summary")
-        workflow.updated_at = analysis.get("analyzed_at", datetime.utcnow())
-        workflow.status = "ANALYSIS_COMPLETE"
+        workflow.hypotheses = analysis.get("hypotheses", [])
+        workflow.updated_at = analysis.get("analyzed_at", _utc_now())
+        workflow.status = "TRIAGED"
         self.db.add(workflow)
         return workflow
