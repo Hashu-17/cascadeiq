@@ -1,1 +1,1 @@
-feat: attach agent hypotheses and traces to incident responses
+feat: record workflow status transitions in trace store
