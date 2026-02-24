@@ -13,7 +13,6 @@ from api.routes.incidents import router as incidents_router
 from api.routes.workflows import router as workflows_router
 from api.routes.simulations import router as simulations_router
 from database import Base, engine
-from observability.models import ExecutionTraceModel
 
 Base.metadata.create_all(bind=engine)
 

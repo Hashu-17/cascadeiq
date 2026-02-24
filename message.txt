@@ -1,1 +1,1 @@
-docs: clarify agent and observability setup
+feat: integrate multi-agent runner into workflow engine

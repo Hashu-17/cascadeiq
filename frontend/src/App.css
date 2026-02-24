@@ -21,33 +21,6 @@
   margin: 10px 0;
 }
 
-.simulation-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  margin: 16px 0 24px;
-}
-
-.simulation-controls button {
-  background: #1f6feb;
-  border: 0;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  font-size: 14px;
-  padding: 10px 14px;
-}
-
-.simulation-controls button:disabled {
-  cursor: wait;
-  opacity: 0.6;
-}
-
-.error {
-  color: #ff7b72;
-}
-
 @media (max-width: 768px) {
   .App-header { padding: 16px; }
 }

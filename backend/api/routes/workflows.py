@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from database import Workflow, get_db
-from models.schemas import WorkflowResponse
+from backend.database import Workflow, get_db
+from backend.models.schemas import WorkflowResponse
 
 router = APIRouter(prefix="/api", tags=["workflows"])
 
