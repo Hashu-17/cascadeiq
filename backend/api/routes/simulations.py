@@ -9,11 +9,11 @@ from database import Incident, get_db
 from models.schemas import IncidentResponse
 from api.routes.incidents import _build_incident_response
 from simulations.generator import generate_incident_from_scenario
-from orchestration.state_manager import WorkflowStateManager
-from orchestration.workflow_engine import analyze_incident
+from orchestration.workflow_engine import process_workflow_incident
 from incident_queue import enqueue_incident
 
 router = APIRouter(prefix="/api/simulate", tags=["simulations"])
+
 
 def _parse_timestamp(value) -> datetime:
     if isinstance(value, datetime):
@@ -25,6 +25,7 @@ def _parse_timestamp(value) -> datetime:
         except ValueError:
             pass
     return datetime.now(timezone.utc)
+
 
 @router.post("/{scenario}", response_model=IncidentResponse)
 async def simulate_incident(scenario: str, db: Session = Depends(get_db)) -> IncidentResponse:
@@ -58,17 +59,5 @@ async def simulate_incident(scenario: str, db: Session = Depends(get_db)) -> Inc
         "timestamp": payload["timestamp"],
     }))
 
-    state_manager = WorkflowStateManager(db)
-    workflow = state_manager.create_workflow(incident_id)
-    state_manager.update_status(workflow, "INGESTION_COMPLETE")
-    analysis = analyze_incident(
-        raw_logs=incident.raw_logs,
-        incident_type=incident.incident_type,
-        service_name=incident.service_name,
-        severity=incident.severity,
-    )
-    state_manager.apply_analysis(workflow, analysis)
-    db.commit()
-    db.refresh(workflow)
-
+    workflow = process_workflow_incident(incident, db)
     return _build_incident_response(incident, workflow)

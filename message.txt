@@ -1,1 +1,1 @@
-feat: enrich simulation scenarios with deployment metadata
+feat: connect simulation triggers to workflow analysis
