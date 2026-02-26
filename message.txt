@@ -1,1 +1,1 @@
-feat: add operational metrics overview component
+feat: add searchable and filterable incident feed
