@@ -1,1 +1,1 @@
-test: add end-to-end multi-agent workflow verification
+feat: create control room navigation and simulation controls
