@@ -1,1 +1,1 @@
-feat: add searchable and filterable incident feed
+feat: visualize multi-agent hypotheses and confidence meters
