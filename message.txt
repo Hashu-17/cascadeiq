@@ -1,1 +1,1 @@
-feat: add incident detail inspector with telemetry console
+feat: assemble unified operations control room dashboard
