@@ -1,1 +1,1 @@
-feat: visualize multi-agent hypotheses and confidence meters
+feat: render chronological workflow execution trace timeline
