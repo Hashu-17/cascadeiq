@@ -1,1 +1,1 @@
-feat: render chronological workflow execution trace timeline
+feat: add incident detail inspector with telemetry console
