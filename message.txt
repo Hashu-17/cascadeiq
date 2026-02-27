@@ -1,1 +1,1 @@
-feat: assemble unified operations control room dashboard
+style: apply mission control dark theme and telemetry typography
