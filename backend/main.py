@@ -12,9 +12,9 @@ if PROJECT_ROOT not in sys.path:
 from api.routes.incidents import router as incidents_router
 from api.routes.workflows import router as workflows_router
 from api.routes.simulations import router as simulations_router
-from database import Base, engine
+from database import ensure_schema
 
-Base.metadata.create_all(bind=engine)
+ensure_schema()
 
 app = FastAPI(title="CascadeIQ", version="0.1.0")
 

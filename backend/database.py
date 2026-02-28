@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 import os
-from sqlalchemy import Column, DateTime, Float, Integer, JSON, String, Text, create_engine
+from sqlalchemy import Column, DateTime, Float, Integer, JSON, String, Text, create_engine, text
 from sqlalchemy.orm import declarative_base, sessionmaker
 
 DATABASE_URL = os.getenv("DATABASE_URL")
@@ -54,9 +54,30 @@ class Workflow(Base):
     created_at = Column(DateTime, default=_utc_now)
 
 
+class ExecutionTraceModel(Base):
+    __tablename__ = "execution_traces"
+    id = Column(Integer, primary_key=True, index=True)
+    workflow_id = Column(String, index=True)
+    stage = Column(String)
+    status = Column(String, default="completed")
+    message = Column(Text)
+    agent_name = Column(String, nullable=True)
+    duration_ms = Column(Integer, nullable=True)
+    timestamp = Column(DateTime, default=_utc_now)
+
+
 def get_db():
     db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
+
+
+def ensure_schema():
+    Base.metadata.create_all(bind=engine)
+    if engine.dialect.name == "postgresql":
+        with engine.begin() as connection:
+            connection.execute(
+                text("ALTER TABLE workflows ADD COLUMN IF NOT EXISTS hypotheses JSON")
+            )
