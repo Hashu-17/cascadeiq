@@ -1,1 +1,1 @@
-style: apply mission control dark theme and telemetry typography
+docs: document incident orchestration and execution tracing
