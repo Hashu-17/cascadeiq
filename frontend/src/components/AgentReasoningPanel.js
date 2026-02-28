@@ -4,7 +4,6 @@ function getAgentMeta(agentName) {
   if (agentName === 'log-agent') {
     return {
       displayName: 'Log Analysis Agent',
-      icon: '📋',
       role: 'Signals & Pattern Recognition',
       color: '#38bdf8',
     };
@@ -12,14 +11,12 @@ function getAgentMeta(agentName) {
   if (agentName === 'deployment-agent') {
     return {
       displayName: 'Deployment Correlation Agent',
-      icon: '🚀',
       role: 'Release & Version Analysis',
       color: '#a855f7',
     };
   }
   return {
     displayName: agentName || 'Operational Agent',
-    icon: '🤖',
     role: 'Autonomous Reasoning',
     color: '#10b981',
   };
@@ -52,7 +49,6 @@ function AgentReasoningPanel({ hypotheses = [], probableCause, confidence, summa
 
       {summary && (
         <div className="consensus-summary-box">
-          <span className="summary-icon">🧠</span>
           <div className="summary-content">
             <strong>Synthesized Assessment:</strong>
             <p>{summary}</p>
@@ -71,7 +67,6 @@ function AgentReasoningPanel({ hypotheses = [], probableCause, confidence, summa
             <div key={hypo.agent_name || idx} className="agent-card">
               <div className="agent-card-header">
                 <div className="agent-title-row">
-                  <span className="agent-icon">{meta.icon}</span>
                   <div>
                     <h5 className="agent-name">{meta.displayName}</h5>
                     <span className="agent-role">{meta.role}</span>
@@ -110,7 +105,6 @@ function AgentReasoningPanel({ hypotheses = [], probableCause, confidence, summa
 
                 {hypo.recommendation && (
                   <div className="recommendation-section">
-                    <span className="rec-icon">💡</span>
                     <span className="rec-text">{hypo.recommendation}</span>
                   </div>
                 )}

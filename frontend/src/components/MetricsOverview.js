@@ -42,14 +42,6 @@ function MetricsOverview({ incidents = [] }) {
         <span className="metric-subtext">Heuristic & hypothesis synthesis</span>
       </div>
 
-      <div className="metric-card">
-        <span className="metric-title">Orchestration State</span>
-        <div className="metric-value-row">
-          <span className="metric-value">Phase 4</span>
-          <span className="metric-badge purple">OBSERVABILITY</span>
-        </div>
-        <span className="metric-subtext">Traces & Metrics active</span>
-      </div>
     </div>
   );
 }

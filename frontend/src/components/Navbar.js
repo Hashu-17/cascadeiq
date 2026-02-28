@@ -1,9 +1,9 @@
 import React from 'react';
 
 const scenarios = [
-  { id: 'api-failure', label: 'API Failure (Redis)', icon: '⚡' },
-  { id: 'db-outage', label: 'DB Pool Outage', icon: '💾' },
-  { id: 'traffic-spike', label: 'Traffic Surge (Queue)', icon: '📈' },
+  { id: 'api-failure', label: 'API Failure (Redis)' },
+  { id: 'db-outage', label: 'DB Pool Outage' },
+  { id: 'traffic-spike', label: 'Traffic Surge (Queue)' },
 ];
 
 function Navbar({ onSimulate, isSimulating }) {
@@ -18,14 +18,9 @@ function Navbar({ onSimulate, isSimulating }) {
       </div>
 
       <div className="navbar-controls">
-        <div className="system-status-indicator">
-          <span className="status-dot pulsing"></span>
-          <span className="status-text">CONTROL ROOM ACTIVE</span>
-        </div>
-
         <div className="simulation-actions">
           <span className="simulation-label">Inject Simulation:</span>
-          {scenarios.map(({ id, label, icon }) => (
+          {scenarios.map(({ id, label }) => (
             <button
               key={id}
               type="button"
@@ -33,7 +28,6 @@ function Navbar({ onSimulate, isSimulating }) {
               disabled={isSimulating !== null}
               onClick={() => onSimulate(id)}
             >
-              <span className="btn-icon">{icon}</span>
               {isSimulating === id ? 'Simulating...' : label}
             </button>
           ))}

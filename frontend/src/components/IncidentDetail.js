@@ -9,7 +9,6 @@ function IncidentDetail({ incident, traces = [], loadingTraces = false, onStatus
     return (
       <div className="incident-detail-empty">
         <div className="empty-selection-box">
-          <span className="empty-icon">🎯</span>
           <h3>Select an Incident</h3>
           <p>Choose an active or historical incident from the feed to inspect multi-agent reasoning, evidence, and execution traces.</p>
         </div>
@@ -18,7 +17,6 @@ function IncidentDetail({ incident, traces = [], loadingTraces = false, onStatus
   }
 
   const isResolved = incident.status === 'RESOLVED';
-  const severityClass = `badge-sev-${(incident.severity || 'medium').toLowerCase()}`;
 
   return (
     <div className="incident-detail-panel">
@@ -26,9 +24,7 @@ function IncidentDetail({ incident, traces = [], loadingTraces = false, onStatus
       <div className="detail-header-card">
         <div className="detail-header-top">
           <div className="service-title-group">
-            <span className={`badge ${severityClass}`}>{incident.severity}</span>
             <h2>{incident.service_name}</h2>
-            <span className="incident-type-tag">{incident.incident_type}</span>
           </div>
 
           <div className="detail-actions">
@@ -56,6 +52,7 @@ function IncidentDetail({ incident, traces = [], loadingTraces = false, onStatus
 
         {incident.description && (
           <div className="detail-description">
+            <span className="section-label">Incident Description</span>
             <p>{incident.description}</p>
           </div>
         )}

@@ -1,1 +1,1 @@
-docs: document incident orchestration and execution tracing
+style: refine incident reasoning dashboard
