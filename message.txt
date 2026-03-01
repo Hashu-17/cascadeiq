@@ -1,1 +1,1 @@
-feat: configure local Ollama model settings
+feat: add structured AI reasoning contracts
