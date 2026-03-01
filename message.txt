@@ -1,1 +1,1 @@
-style: refine incident reasoning dashboard
+feat: add AI runtime configuration
