@@ -1,1 +1,1 @@
-feat: add AI runtime configuration
+chore: add LangGraph and Ollama dependencies
