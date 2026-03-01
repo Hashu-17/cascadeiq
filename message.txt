@@ -1,1 +1,1 @@
-chore: add LangGraph and Ollama dependencies
+feat: configure local Ollama model settings
