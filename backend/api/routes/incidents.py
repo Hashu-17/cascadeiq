@@ -34,6 +34,7 @@ def create_incident(payload: IncidentCreate, db: Session = Depends(get_db)):
         service_name=payload.service_name,
         severity=payload.severity,
         incident_type=payload.incident_type,
+        original_description=payload.description or f"Operational incident on {payload.service_name}",
         description=payload.description or f"Operational incident on {payload.service_name}",
         raw_logs=payload.raw_logs,
         incident_timestamp=incident_timestamp,

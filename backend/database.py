@@ -33,6 +33,8 @@ class Incident(Base):
     incident_type = Column(String, index=True)
     status = Column(String, default="ACTIVE")
     description = Column(String)
+    original_description = Column(String, nullable=True)
+    ai_description = Column(String, nullable=True)
     raw_logs = Column(Text)
     incident_timestamp = Column(DateTime, default=_utc_now)
     incident_metadata = Column(JSON, default=dict)

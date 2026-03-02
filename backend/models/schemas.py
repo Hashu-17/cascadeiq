@@ -22,6 +22,8 @@ class IncidentCreate(BaseModel):
     timestamp: Optional[datetime] = None
     incident_metadata: dict = Field(default_factory=dict)
     description: Optional[str] = None
+    original_description: Optional[str] = None
+    ai_description: Optional[str] = None
 
 
 class IncidentResponse(BaseModel):

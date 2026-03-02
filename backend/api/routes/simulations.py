@@ -42,6 +42,7 @@ async def simulate_incident(scenario: str, db: Session = Depends(get_db)) -> Inc
         service_name=payload["service_name"],
         severity=payload["severity"],
         incident_type=payload["incident_type"],
+        original_description=payload["description"],
         description=payload["description"],
         raw_logs=payload["raw_logs"],
         incident_timestamp=incident_timestamp,
