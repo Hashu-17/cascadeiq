@@ -1,1 +1,1 @@
-feat: preserve incident description provenance
+test: cover AI description validation
