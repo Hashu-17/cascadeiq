@@ -1,1 +1,1 @@
-feat: add structured AI reasoning contracts
+feat: add contextual incident description prompt
