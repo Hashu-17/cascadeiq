@@ -1,1 +1,1 @@
-feat: add contextual incident description prompt
+feat: add AI incident description node
