@@ -30,3 +30,5 @@ def synthesis_node(state: IncidentReasoningState, model) -> dict:
     ))
     result.analyzed_at = result.analyzed_at or _now()
     return {"synthesis": result.model_dump()}
+
+# Log analysis is an independent graph specialist.

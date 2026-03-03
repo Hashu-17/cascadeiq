@@ -1,1 +1,1 @@
-feat: create incident reasoning graph
+feat: add AI log analysis node
