@@ -1,1 +1,1 @@
-test: cover AI description validation
+feat: define LangGraph incident state
