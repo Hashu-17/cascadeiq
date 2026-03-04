@@ -1,1 +1,1 @@
-feat: persist AI analysis metadata
+feat: integrate reasoning graph into workflows
