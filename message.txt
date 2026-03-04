@@ -1,1 +1,1 @@
-feat: add AI synthesis and triage node
+feat: validate structured graph outputs
