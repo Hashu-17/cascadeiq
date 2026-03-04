@@ -45,6 +45,9 @@ class IncidentResponse(BaseModel):
     confidence: Optional[float] = None
     analysis_severity: Optional[str] = None
     analysis_summary: Optional[str] = None
+    ai_provider: Optional[str] = None
+    ai_model: Optional[str] = None
+    ai_error: Optional[str] = None
     hypotheses: list[AgentHypothesisResponse] = Field(default_factory=list)
     created_at: datetime
 
