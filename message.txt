@@ -1,1 +1,1 @@
-feat: add AI deployment analysis node
+feat: add AI synthesis and triage node

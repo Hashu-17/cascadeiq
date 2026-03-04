@@ -18,6 +18,7 @@ class AIHypothesis(BaseModel):
 
 
 class AISynthesis(BaseModel):
+  leading_agent: str = Field(min_length=1)
   probable_cause: str = Field(min_length=1)
   confidence: float = Field(ge=0, le=1)
   recommendation: str = Field(min_length=1)
