@@ -29,3 +29,5 @@ class TraceStore:
                 .all())
 
 # Trace writes are flushed before the workflow transaction commits.
+
+# AI graph stages include provider, model, latency, and validation outcomes.
