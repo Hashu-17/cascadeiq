@@ -1,1 +1,1 @@
-feat: trace graph node execution
+test: cover LangGraph workflow execution
