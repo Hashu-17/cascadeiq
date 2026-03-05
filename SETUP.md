@@ -68,3 +68,5 @@ Run the verification scripts:
 ## Observability
 
 Prometheus scrapes backend metrics and Grafana provides the operations dashboard.
+
+AI analysis is required. If Ollama is unavailable, the workflow is marked AI_ANALYSIS_FAILED and the error is recorded in its execution trace.

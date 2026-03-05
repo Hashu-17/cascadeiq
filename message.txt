@@ -1,1 +1,1 @@
-feat: integrate reasoning graph into workflows
+fix: expose AI workflow failures

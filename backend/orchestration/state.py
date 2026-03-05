@@ -14,3 +14,5 @@ class WorkflowState:
     updated_at: datetime
 
     completed_agents: list[str] = None
+
+    ai_error: str | None = None
