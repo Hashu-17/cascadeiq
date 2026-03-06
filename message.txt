@@ -1,1 +1,1 @@
-style: remove aggregate confidence indicators
+style: simplify incident selection state

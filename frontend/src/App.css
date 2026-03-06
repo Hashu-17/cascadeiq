@@ -361,8 +361,7 @@ body {
 
 .incident-card.selected {
   border-color: var(--accent-cyan);
-  background-color: rgba(56, 189, 248, 0.08);
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+  background-color: var(--bg-card);
 }
 
 .incident-card-top, .incident-card-middle, .incident-card-bottom {
