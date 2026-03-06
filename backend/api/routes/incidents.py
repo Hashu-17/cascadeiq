@@ -22,6 +22,9 @@ def _build_incident_response(incident: Incident, workflow: Workflow | None) -> d
             "analysis_severity": workflow.analysis_severity,
             "analysis_summary": workflow.analysis_summary,
             "hypotheses": workflow.hypotheses or [],
+            "ai_provider": workflow.ai_provider,
+            "ai_model": workflow.ai_model,
+            "ai_error": workflow.ai_error,
         })
     return response
 
