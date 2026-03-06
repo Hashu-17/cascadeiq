@@ -1,1 +1,1 @@
-test: cover LangGraph workflow execution
+feat: route simulations through AI reasoning

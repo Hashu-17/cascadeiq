@@ -66,3 +66,5 @@ Request shedding enabled: 18% of incoming requests rejected.""",
     if scenario not in scenarios:
         raise ValueError(f"Unknown scenario: {scenario}")
     return scenarios[scenario]
+
+# Simulation payloads remain deterministic inputs to the AI reasoning graph.
