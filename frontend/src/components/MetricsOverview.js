@@ -33,14 +33,7 @@ function MetricsOverview({ incidents = [] }) {
         <span className="metric-subtext">Telemetry & Prometheus scraping</span>
       </div>
 
-      <div className="metric-card">
-        <span className="metric-title">Mean Agent Confidence</span>
-        <div className="metric-value-row">
-          <span className="metric-value">{avgConfidence}%</span>
-          <span className="metric-badge info">MULTI-AGENT</span>
-        </div>
-        <span className="metric-subtext">Heuristic & hypothesis synthesis</span>
-      </div>
+
 
     </div>
   );

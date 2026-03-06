@@ -98,11 +98,6 @@ function IncidentFeed({ incidents = [], selectedIncidentId, onSelectIncident }) 
                   <span className="workflow-status-tag">
                     WF: {incident.workflow_status || 'TRIAGED'}
                   </span>
-                  {typeof incident.confidence === 'number' && (
-                    <span className="confidence-tag">
-                      {Math.round(incident.confidence * 100)}% conf
-                    </span>
-                  )}
                 </div>
               </div>
             );
