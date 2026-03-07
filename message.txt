@@ -1,1 +1,1 @@
-style: simplify incident selection state
+feat: display AI analysis status

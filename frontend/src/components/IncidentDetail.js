@@ -50,6 +50,10 @@ function IncidentDetail({ incident, traces = [], loadingTraces = false, onStatus
           </span>
         </div>
 
+        {incident.ai_error && (
+          <div className="ai-error-banner">AI analysis failed: {incident.ai_error}</div>
+        )}
+
         {incident.description && (
           <div className="detail-description">
             <span className="section-label">Incident Description</span>
