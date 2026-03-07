@@ -32,3 +32,5 @@ See [SETUP.md](SETUP.md) for detailed setup and development instructions.
 Log and deployment agents produce validated hypotheses for workflow analysis.
 
 Phase 3 and Phase 4 foundations are now represented by agent and observability modules.
+
+AI reasoning uses LangGraph with a local Ollama model and structured specialist outputs.

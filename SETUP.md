@@ -70,3 +70,7 @@ Run the verification scripts:
 Prometheus scrapes backend metrics and Grafana provides the operations dashboard.
 
 AI analysis is required. If Ollama is unavailable, the workflow is marked AI_ANALYSIS_FAILED and the error is recorded in its execution trace.
+
+## Local AI Reasoning
+
+Install Ollama, run `ollama pull qwen2.5:7b`, and start the stack. Configure `LANGGRAPH_MODEL`, `OLLAMA_BASE_URL`, and `AI_REQUIRED`.
