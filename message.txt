@@ -1,1 +1,1 @@
-docs: document local Ollama setup
+chore: configure Ollama service

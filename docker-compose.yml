@@ -1,12 +1,11 @@
 version: '3.8'
 
-# Docker Compose configuration for CascadeIQ services
 services:
   postgres:
     image: postgres:15
     environment:
       POSTGRES_USER: cascadeiq
-      POSTGRES_PASSWORD: cascadeiq_dev
+      POSTGRES_PASSWORD: cascadeiq
       POSTGRES_DB: cascadeiq
     ports:
       - "5432:5432"
@@ -18,6 +17,12 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/data
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
   backend:
     build:
       context: .
@@ -25,11 +30,15 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: postgresql://cascadeiq:cascadeiq_dev@postgres:5432/cascadeiq
+      DATABASE_URL: postgresql://cascadeiq:cascadeiq@postgres:5432/cascadeiq
       REDIS_URL: redis://redis:6379
+      LANGGRAPH_MODEL: qwen2.5:7b
+      OLLAMA_BASE_URL: http://ollama:11434
+      AI_REQUIRED: "true"
     depends_on:
       - postgres
       - redis
+      - ollama
   frontend:
     build: ./frontend
     ports:
@@ -44,14 +53,12 @@ services:
     build: ./infrastructure/docker/auth-service
     ports:
       - "9002:9002"
-
   prometheus:
     image: prom/prometheus:latest
     ports:
       - "9090:9090"
     volumes:
       - ./infrastructure/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-
   grafana:
     image: grafana/grafana:latest
     ports:
@@ -60,21 +67,4 @@ services:
 volumes:
   postgres_data:
   redis_data:
-
-  ollama:
-    image: ollama/ollama:latest
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_data:/root/.ollama
-
-  prometheus:
-    image: prom/prometheus:latest
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./infrastructure/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-  grafana:
-    image: grafana/grafana:latest
-    ports:
-      - "3001:3000"
+  ollama_data:
