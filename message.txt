@@ -1,1 +1,1 @@
-chore: configure Ollama service
+test: add AI integration verification
